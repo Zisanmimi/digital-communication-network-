@@ -1,3 +1,1 @@
-// Basic interactivity (optional)
-console.log("DCN Website Loaded");
-
+console.log("DCN website fully loaded.");
