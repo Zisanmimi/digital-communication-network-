@@ -19,11 +19,12 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  
+  flex-wrap: wrap;
 }
 
 .logo {
   height: 40px;
+  width: auto;
 }
 
 .nav-links {
