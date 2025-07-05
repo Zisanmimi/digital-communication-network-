@@ -2,183 +2,144 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Digital Communication Network (DCN)</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Digital Communication Network</title>
   <style>
-    html { scroll-behavior: smooth; }
     body {
       margin: 0;
-      font-family: 'Inter', sans-serif;
-      background-color: #f9f9f9;
-      color: #333;
+      font-family: 'Segoe UI', sans-serif;
     }
+
     header {
-      background: #003366;
-      color: #fff;
-      padding: 1rem 2rem;
+      background-color: #003366;
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      flex-wrap: wrap;
     }
+
     header img {
-      height: 60px;
+      height: 40px;
+      max-width: 100%;
     }
+
+    nav {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
     nav a {
-      margin-left: 1rem;
-      color: #fff;
+      color: white;
       text-decoration: none;
       font-weight: bold;
+      font-size: 16px;
     }
+
     .hero {
-      background: linear-gradient(135deg, #003366, #660099);
-      color: #fff;
-      padding: 4rem 2rem;
-      text-align: center;
-    }
-    .hero h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-    }
-    .section {
-      padding: 2rem;
-      text-align: center;
-    }
-    .form-group {
-      margin-bottom: 1rem;
-    }
-    form {
-      max-width: 500px;
-      margin: auto;
-      background: #fff;
-      padding: 2rem;
-      border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    }
-    label {
-      display: block;
-      margin-bottom: 0.5rem;
-      text-align: left;
-      font-weight: bold;
-    }
-    input, select {
-      width: 100%;
-      padding: 0.5rem;
-      margin-bottom: 1rem;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-    }
-    button {
-      background: #003366;
+      background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
       color: white;
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .hero h1 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      margin: 0;
+      font-size: 16px;
+    }
+
+    .hero button {
+      margin-top: 20px;
+      background-color: #9400D3;
+      color: white;
+      padding: 10px 25px;
       border: none;
-      padding: 0.75rem 1.5rem;
-      border-radius: 5px;
+      border-radius: 8px;
+      font-size: 16px;
       cursor: pointer;
-      font-weight: bold;
     }
-    .contact {
-      background: #003366;
-      color: #fff;
-      padding: 2rem;
+
+    #packageDropdown {
+      display: none;
       text-align: center;
+      padding: 30px 20px;
     }
-    footer {
-      background: #222;
-      color: #ccc;
-      text-align: center;
-      padding: 1rem;
+
+    #packageDropdown h2 {
+      font-size: 22px;
+      margin-bottom: 15px;
     }
-    @media (max-width: 600px) {
+
+    .package {
+      margin-bottom: 15px;
+      font-size: 18px;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        margin-top: 10px;
+      }
+
+      nav a {
+        font-size: 14px;
+        padding: 5px 0;
+      }
+
       .hero h1 {
-        font-size: 2rem;
+        font-size: 22px;
+      }
+
+      .hero button {
+        font-size: 14px;
       }
     }
   </style>
-  <script>
-    function validateForm(event) {
-      const trxid = document.getElementById('trxid').value.trim();
-      const screenshot = document.getElementById('screenshot').value.trim();
-      if (trxid === '' && screenshot === '') {
-        alert('Please provide either a Transaction ID or upload a Screenshot.');
-        event.preventDefault();
-      }
-    }
-  </script>
 </head>
 <body>
+
   <header>
-    <img src="logo.png" alt="<img src="logo.png" alt="DCN Logo" style="height: 50px; max-width: 100%; object-fit: contain;">
+    <img src="logo.png" alt="DCN Logo">
     <nav>
-      <a href="#packages">Packages</a>
-      <a href="#pay">Pay Bill</a>
-      <a href="#contact">Contact</a>
+      <a href="#">Packages</a>
+      <a href="#">Pay Bill</a>
+      <a href="#">Contact</a>
     </nav>
   </header>
 
   <section class="hero">
     <h1>Digital Communication Network</h1>
     <p>Reliable Broadband Internet at Affordable Prices</p>
+    <button onclick="togglePackages()">VIEW PACKAGES</button>
   </section>
 
-  <section class="section" id="packages">
-    <h2 id="packages">Internet Packages</h2>
-    <div class="packages">
-      <div class="package">
-        <h2>10 Mbps</h2>
-        <p>৳500 / month</p>
-      </div>
-      <div class="package">
-        <h2>15 Mbps</h2>
-        <p>৳700 / month</p>
-      </div>
-      <div class="package">
-        <h2>20 Mbps</h2>
-        <p>৳1000 / month</p>
-      </div>
-    </div>
+  <section id="packageDropdown">
+    <h2>Internet Packages</h2>
+    <div class="package">10 Mbps – ৳500 / month</div>
+    <div class="package">15 Mbps – ৳700 / month</div>
+    <div class="package">20 Mbps – ৳1000 / month</div>
   </section>
 
-  <section class="section" id="pay">
-    <h2>Pay Your Bill</h2>
-    <form action="mailto:nurulhasnat63@gmail.com" method="POST" enctype="multipart/form-data" onsubmit="validateForm(event)">
-      <div class="form-group">
-        <label for="username">Username</label>
-        <input type="text" id="username" name="username" required>
-      </div>
-      <div class="form-group">
-        <label for="phone">Phone Number</label>
-        <input type="tel" id="phone" name="phone" required>
-      </div>
-      <div class="form-group">
-        <label for="method">Payment Method</label>
-        <select id="method" name="method" required>
-          <option value="bKash">bKash</option>
-          <option value="Nagad">Nagad</option>
-          <option value="Rocket">Rocket</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="trxid">Transaction ID (optional)</label>
-        <input type="text" id="trxid" name="trxid">
-      </div>
-      <div class="form-group">
-        <label for="screenshot">Upload Screenshot (optional)</label>
-        <input type="file" id="screenshot" name="screenshot" accept="image/*,.pdf">
-      </div>
-      <button type="submit">Submit Payment</button>
-    </form>
-  </section>
+  <script>
+    function togglePackages() {
+      const dropdown = document.getElementById("packageDropdown");
+      dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+    }
+  </script>
 
-  <section class="contact" id="contact">
-    <h2>Contact Us</h2>
-    <p>📞 01799032285</p>
-    <p>📧 nurulhasnat63@gmail.com</p>
-    <p>📍 Chourhash More</p>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 Digital Communication Network (DCN). All rights reserved.</p>
-  </footer>
 </body>
 </html>
