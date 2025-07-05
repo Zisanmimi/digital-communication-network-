@@ -2,144 +2,58 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Digital Communication Network</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-    }
-
-    header {
-      background-color: #003366;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 20px;
-      flex-wrap: wrap;
-    }
-
-    header img {
-      height: 40px;
-      max-width: 100%;
-    }
-
-    nav {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 16px;
-    }
-
-    .hero {
-      background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
-      color: white;
-      text-align: center;
-      padding: 60px 20px;
-    }
-
-    .hero h1 {
-      font-size: 28px;
-      margin-bottom: 10px;
-    }
-
-    .hero p {
-      margin: 0;
-      font-size: 16px;
-    }
-
-    .hero button {
-      margin-top: 20px;
-      background-color: #9400D3;
-      color: white;
-      padding: 10px 25px;
-      border: none;
-      border-radius: 8px;
-      font-size: 16px;
-      cursor: pointer;
-    }
-
-    #packageDropdown {
-      display: none;
-      text-align: center;
-      padding: 30px 20px;
-    }
-
-    #packageDropdown h2 {
-      font-size: 22px;
-      margin-bottom: 15px;
-    }
-
-    .package {
-      margin-bottom: 15px;
-      font-size: 18px;
-    }
-
-    @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      nav {
-        flex-direction: column;
-        align-items: flex-start;
-        width: 100%;
-        margin-top: 10px;
-      }
-
-      nav a {
-        font-size: 14px;
-        padding: 5px 0;
-      }
-
-      .hero h1 {
-        font-size: 22px;
-      }
-
-      .hero button {
-        font-size: 14px;
-      }
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Digital Communication Network (DCN)</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
-
   <header>
-    <img src="logo.png" alt="DCN Logo">
-    <nav>
-      <a href="#">Packages</a>
-      <a href="#">Pay Bill</a>
-      <a href="#">Contact</a>
-    </nav>
+    <div class="container">
+      <img src="assets/images/logo.png" alt="DCN Logo" class="logo" />
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Packages</a></li>
+          <li><a href="#">Coverage</a></li>
+          <li><a href="#">Support</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <section class="hero">
-    <h1>Digital Communication Network</h1>
-    <p>Reliable Broadband Internet at Affordable Prices</p>
-    <button onclick="togglePackages()">VIEW PACKAGES</button>
+  <section class="banner">
+    <img src="assets/images/banner.jpg" alt="Banner" />
+    <div class="banner-text">
+      <h1>Welcome to Digital Communication Network</h1>
+      <p>Connecting you to the world, faster.</p>
+    </div>
   </section>
 
-  <section id="packageDropdown">
-    <h2>Internet Packages</h2>
-    <div class="package">10 Mbps – ৳500 / month</div>
-    <div class="package">15 Mbps – ৳700 / month</div>
-    <div class="package">20 Mbps – ৳1000 / month</div>
+  <section class="content">
+    <div class="container">
+      <h2>Our Internet Packages</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Bronze</h3>
+          <p>10 Mbps - ৳500/month</p>
+        </div>
+        <div class="card">
+          <h3>Silver</h3>
+          <p>20 Mbps - ৳800/month</p>
+        </div>
+        <div class="card">
+          <h3>Gold</h3>
+          <p>50 Mbps - ৳1200/month</p>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <script>
-    function togglePackages() {
-      const dropdown = document.getElementById("packageDropdown");
-      dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
-    }
-  </script>
+  <footer>
+    <p>&copy; 2025 Digital Communication Network (DCN). All rights reserved.</p>
+  </footer>
 
+  <script src="assets/js/script.js"></script>
 </body>
-                                                 </html>
+</html>
