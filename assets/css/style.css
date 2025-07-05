@@ -24,7 +24,6 @@ header {
 
 .logo {
   height: 40px;
-  width: auto;
 }
 
 .nav-links {
@@ -108,7 +107,7 @@ footer {
   }
 
   .navbar {
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
   }
 
